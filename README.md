@@ -1,24 +1,9 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Deal App
+## Technologies Used
+  * This app is React on the frontend and Rails on the backend
+### Approach Taken
+  * I used my Noticeboard app that we build as a guide. This app is full crud with a working front and backend.
+### Unsolved Issues
+  * I would like to pull from restaurant apis to make deals in real time.
+## Working link
+  * https://deals-app-api.herokuapp.com/deals
