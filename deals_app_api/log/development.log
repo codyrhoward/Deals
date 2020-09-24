@@ -31,3 +31,51 @@ Migrating to CreateDeals (20200924150256)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mDeal Create (0.3ms)[0m  [1m[32mINSERT INTO "deals" ("restaurant", "category", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["restaurant", "Taco Bell"], ["category", "Meal Deal"], ["content", "Ask about all of our $5 boxes at any of our locations"], ["created_at", "2020-09-24 15:48:13.280741"], ["updated_at", "2020-09-24 15:48:13.280741"]]
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/deals" for ::1 at 2020-09-24 11:51:50 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DealsController#index as HTML
+  [1m[36mDeal Load (2.4ms)[0m  [1m[34mSELECT "deals".* FROM "deals"[0m
+  ↳ app/controllers/deals_controller.rb:8:in `index'
+Completed 200 OK in 157ms (Views: 54.8ms | ActiveRecord: 78.0ms | Allocations: 5419)
+
+
+Started GET "/deals" for ::1 at 2020-09-24 13:28:45 -0400
+Processing by DealsController#index as HTML
+  [1m[36mDeal Load (2.9ms)[0m  [1m[34mSELECT "deals".* FROM "deals"[0m
+  ↳ app/controllers/deals_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 2.9ms | Allocations: 1517)
+
+
+Started GET "/deals" for ::1 at 2020-09-24 13:40:25 -0400
+Processing by DealsController#index as */*
+  [1m[36mDeal Load (1.0ms)[0m  [1m[34mSELECT "deals".* FROM "deals"[0m
+  ↳ app/controllers/deals_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 1.0ms | Allocations: 1519)
+
+
+Started OPTIONS "/deals" for ::1 at 2020-09-24 13:41:44 -0400
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/deals"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
